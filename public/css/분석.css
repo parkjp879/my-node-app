@@ -209,3 +209,41 @@ main {
 #backToListButton {
     right: calc(20px + 3mm + 300px); /* 버튼 간격 1mm */
 }
+
+/* 모바일 환경을 위한 스타일 */
+@media (max-width: 768px) {
+    .small-banner-grid {
+        grid-template-columns: repeat(2, 1fr); /* 모바일에서 2개씩 이열로 표시 */
+    }
+
+    .small-banner {
+        width: 100%;
+        height: auto;
+    }
+
+    .container {
+        width: 100%; /* 모바일에서 컨테이너를 화면에 맞게 조정 */
+        padding: 0 10px;
+    }
+
+    .board {
+        width: 100%; /* 모바일에서 게시판을 화면에 맞게 조정 */
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .small-banner-grid {
+        grid-template-columns: repeat(2, 1fr); /* 모바일에서 2개씩 이열로 표시 */
+    }
+
+    .container {
+        width: 100%; /* 모바일에서 컨테이너를 화면에 맞게 조정 */
+        padding: 0 10px;
+    }
+
+    .board {
+        width: 100%; /* 모바일에서 게시판을 화면에 맞게 조정 */
+        padding: 0 10px;
+    }
+}

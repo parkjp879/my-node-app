@@ -1,9 +1,12 @@
+/* common.css */
+
 /* 공통 스타일 */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
     color: #333;
+    overflow-x: hidden; /* 수평 스크롤 막기 */
 }
 
 .container {
@@ -79,4 +82,21 @@ nav.navbar .burger div {
     background-color: white;
     margin: 4px;
     transition: all 0.3s;
+}
+
+/* 미디어 쿼리 */
+@media (max-width: 768px) {
+    nav.navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.navbar .nav-links.active {
+        display: flex;
+    }
+
+    nav.navbar .burger {
+        display: flex;
+    }
 }

@@ -1,3 +1,5 @@
+// script.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const postForm = document.getElementById('postForm');
     const postsContainer = document.getElementById('posts');
@@ -100,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 reader.onload = function(event) {
                     const imageElement = `<img src="${event.target.result}" alt="Post Image" style="max-width: 100%; height: auto; margin-top: 10px;">`;
                     postContentDisplay.innerHTML += imageElement;
-                    postContent.value += '\n' + imageElement;
                 };
                 reader.readAsDataURL(file);
             }
@@ -252,4 +253,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderPosts();
     renderPagination();
+    
+    // 모바일 메뉴 토글 기능
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
 });

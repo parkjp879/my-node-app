@@ -24,8 +24,8 @@ main {
 }
 
 .banner {
-    width: 292px;
-    height: 292px;
+    width: 100%;
+    height: auto;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -66,12 +66,22 @@ main {
 /* 미디어 쿼리 */
 @media (max-width: 768px) {
     .banner-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 모바일에서 2개씩 이열로 표시 */
     }
 
     .banner {
         width: 100%;
         height: auto;
+    }
+
+    .container {
+        width: 100%; /* 모바일에서 컨테이너를 화면에 맞게 조정 */
+        padding: 0 10px;
+    }
+
+    .board {
+        width: 100%; /* 모바일에서 게시판을 화면에 맞게 조정 */
+        padding: 0 10px;
     }
 
     nav.navbar .nav-links {
@@ -91,6 +101,16 @@ main {
 
 @media (max-width: 480px) {
     .banner-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* 모바일에서 2개씩 이열로 표시 */
+    }
+
+    .container {
+        width: 100%; /* 모바일에서 컨테이너를 화면에 맞게 조정 */
+        padding: 0 10px;
+    }
+
+    .board {
+        width: 100%; /* 모바일에서 게시판을 화면에 맞게 조정 */
+        padding: 0 10px;
     }
 }
