@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Site - 분석</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/분석.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>토토24시</h1>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">토토24시</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="https://t.me/sgsgsg30">토토24시 소통방</a></li>
+                <li><a href="분석.html">스포츠 분석</a></li>
+                <li><a href="#" id="loginButton">로그인</a></li>
+                <li><a href="https://t.me/ssu62">문의</a></li>
+            </ul>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <h2>분석 페이지</h2>
+            <section class="small-banner-grid">
+                <div class="small-banner"><a href="images/banner1.jpg"><img src="images/small.gif" alt="Banner 1"></a></div>
+                <div class="small-banner"><a href="images/banner2.jpg"><img src="images/small2.gif" alt="Banner 2"></a></div>
+                <div class="small-banner"><a href="images/banner3.jpg"><img src="images/small3.gif" alt="Banner 3"></a></div>
+                <div class="small-banner"><a href="images/banner4.jpg"><img src="images/small4.gif" alt="Banner 4"></a></div>
+                <div class="small-banner"><a href="images/banner5.jpg"><img src="images/small5.gif" alt="Banner 5"></a></div>
+                <div class="small-banner"><a href="images/banner6.jpg"><img src="images/small6.gif" alt="Banner 6"></a></div>
+                <div class="small-banner"><a href="images/banner7.jpg"><img src="images/small7.gif" alt="Banner 7"></a></div>
+                <div class="small-banner"><a href="images/banner8.jpg"><img src="images/small8.gif" alt="Banner 8"></a></div>
+                <div class="small-banner"><a href="images/banner9.jpg"><img src="images/small9.gif" alt="Banner 9"></a></div>
+                <div class="small-banner"><a href="images/banner10.jpg"><img src="images/small10.gif" alt="Banner 10"></a></div>
+                <div class="small-banner"><a href="images/banner11.jpg"><img src="images/small11.gif" alt="Banner 11"></a></div>
+                <div class="small-banner"><a href="images/banner12.jpg"><img src="images/small12.gif" alt="Banner 12"></a></div>
+                <div class="small-banner"><a href="images/banner13.jpg"><img src="images/small13.gif" alt="Banner 13"></a></div>
+                <div class="small-banner"><a href="images/banner14.jpg"><img src="images/small14.gif" alt="Banner 14"></a></div>
+                <div class="small-banner"><a href="images/banner15.jpg"><img src="images/small15.gif" alt="Banner 15"></a></div>
+                <div class="small-banner"><a href="images/banner16.jpg"><img src="images/small16.gif" alt="Banner 16"></a></div>
+            </section>
+            <div class="board">
+                <h3>스포츠 분석 게시판</h3>
+                <form id="postForm" class="hidden">
+                    <input type="text" id="postTitle" placeholder="제목" required>
+                    <div id="postContentDisplay" contenteditable="true" class="content"></div>
+                    <input type="file" id="postImage" accept="image/*">
+                    <button type="submit">게시</button>
+                </form>
+                <div id="posts"></div>
+                <div id="pagination" class="pagination"></div>
+                <button id="createPostButton" class="create-post-button">게시글 작성</button>
+                <button id="deletePostButton" class="hidden">게시글 삭제</button>
+                <button id="editPostButton" class="hidden">게시글 수정</button>
+                <button id="backToListButton" class="hidden">게시글 목록</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeButton">&times;</span>
+            <h2>로그인</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="아이디" required>
+                <input type="password" id="password" placeholder="비밀번호" required>
+                <button type="submit">로그인</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
