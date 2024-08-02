@@ -1,0 +1,478 @@
+/* styles.css */
+
+/* common styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+nav.navbar {
+    background-color: #495057;
+    padding: 10px 0;
+}
+
+nav.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav.navbar .logo a {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+}
+
+nav.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+nav.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav.navbar .nav-links li a:hover {
+    color: #adb5bd;
+}
+
+nav.navbar .burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+nav.navbar .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+    transition: all 0.3s;
+}
+
+/* modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal form input[type="text"],
+.modal form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.modal form button {
+    padding: 10px;
+    border: none;
+    background-color: #495057;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* index page styles */
+main {
+    padding: 40px 0;
+}
+
+.banner-text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+    line-height: 1.5;
+    color: #333;
+    font-weight: bold;
+}
+
+.highlight {
+    color: red;
+}
+
+.banner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.banner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.large-banner {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 1226px;
+    height: 210px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.large-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* analysis page styles */
+.small-banner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.small-banner {
+    width: 290px;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.small-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.small-banner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.board {
+    width: 100%;
+    max-width: 1230px;
+    height: 900px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#postForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#postForm.hidden {
+    display: none;
+}
+
+#postForm input[type="text"],
+#postContentDisplay {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+#postForm input[type="text"] {
+    height: 60px;
+}
+
+#postContentDisplay {
+    height: 580px;
+    overflow-y: auto;
+}
+
+#postForm input[type="file"] {
+    margin-top: 10px;
+}
+
+#postForm button {
+    align-self: flex-end;
+    padding: 10px 20px;
+    border: none;
+    background-color: #495057;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#posts {
+    max-height: 600px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.post {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post .post-number {
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.post .post-title {
+    flex-grow: 1;
+    color: #495057;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.post .post-date {
+    flex-shrink: 0;
+    color: #28a745;
+    margin-left: 20px;
+}
+
+.post.active .post-content,
+.post.active .post-image {
+    display: block;
+}
+
+.post-content {
+    display: none;
+    margin-top: 10px;
+    white-space: pre-wrap;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.post-image {
+    display: none;
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.create-post-button,
+#deletePostButton,
+#editPostButton,
+#backToListButton {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+    background-color: #495057;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#createPostButton.hidden,
+#deletePostButton.hidden,
+#editPostButton.hidden,
+#backToListButton.hidden {
+    display: none;
+}
+
+#createPostButton {
+    right: 20px;
+}
+
+#deletePostButton {
+    right: calc(20px + 1mm + 100px);
+}
+
+#editPostButton {
+    right: calc(20px + 2mm + 200px);
+}
+
+#backToListButton {
+    right: calc(20px + 3mm + 300px);
+}
+
+/* responsive styles */
+@media (max-width: 768px) {
+    .banner-grid,
+    .small-banner-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner,
+    .small-banner {
+        width: 100%;
+        height: auto;
+    }
+
+    .container,
+    .board {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    nav.navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.navbar .nav-links.active {
+        display: flex;
+    }
+
+    nav.navbar .burger {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-grid,
+    .small-banner-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container,
+    .board {
+        width: 100%;
+        padding: 0 10px;
+    }
+}

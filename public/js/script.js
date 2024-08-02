@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loginButton.innerText = '로그아웃';
         loginButton.id = 'logoutButton';
         document.getElementById('logoutButton').addEventListener('click', () => {
-            // 로그아웃 로직 추가
             alert('로그아웃 성공');
             localStorage.removeItem('loggedIn');
             location.reload();
@@ -40,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 로그인 상태 확인
     if (localStorage.getItem('loggedIn') === 'true') {
         setLogoutButton();
         showButtonsForLoggedInUser();
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loginButton.addEventListener('click', () => {
         if (loginButton.id === 'logoutButton') {
-            // 로그아웃 로직 추가
             alert('로그아웃 성공');
             localStorage.removeItem('loggedIn');
             location.reload();
@@ -71,11 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        // 로그인 로직
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        // 마스터 아이디와 비밀번호 확인
         if (username === 'qkrwjdvkf123' && password === 'qkrwjdvkf1!1!') {
             alert('로그인 성공');
             localStorage.setItem('loggedIn', 'true');
@@ -253,8 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderPosts();
     renderPagination();
-    
-    // 모바일 메뉴 토글 기능
+
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
     burger.addEventListener('click', () => {
