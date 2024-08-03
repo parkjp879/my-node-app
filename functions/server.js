@@ -1,20 +1,24 @@
 const express = require('express');
-const serverless = require('serverless-http');
-const path = require('path');
-
+const cors = require('cors');
+const bodyParser = require('body-parser');
 const app = express();
-const router = express.Router();
+const port = 3000;
 
-router.get('/api', (req, res) => {
-  res.json({
-    hello: 'world'
-  });
+app.use(cors());
+app.use(bodyParser.json());
+
+let posts = [];
+
+app.get('/posts', (req, res) => {
+    res.json(posts);
 });
 
-router.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+app.post('/posts', (req, res) => {
+    const post = req.body;
+    posts.unshift(post);
+    res.status(201).json(post);
 });
 
-app.use('/.netlify/functions/server', router);
-
-module.exports.handler = serverless(app);
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
