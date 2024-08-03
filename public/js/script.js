@@ -30,13 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function addPost(post) {
         try {
-            await fetch('http://localhost:3000/posts', {
+            const response = await fetch('http://localhost:3000/posts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(post)
             });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const newPost = await response.json();
+            console.log('Post added successfully:', newPost);
             fetchPosts();
         } catch (error) {
             console.error('Error adding post:', error);

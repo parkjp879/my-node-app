@@ -15,6 +15,7 @@ app.get('/posts', (req, res) => {
 
 app.post('/posts', (req, res) => {
     const post = req.body;
+    console.log('Received new post:', post);
     posts.unshift(post);
     res.status(201).json(post);
 });
