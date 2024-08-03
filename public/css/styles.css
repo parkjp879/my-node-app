@@ -223,228 +223,18 @@ main {
     border-radius: 10px;
 }
 
-/* analysis page styles */
-.small-banner-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-top: 20px;
-}
-
-.small-banner {
-    width: 290px;
-    height: 120px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.small-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.small-banner:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.board {
-    width: 100%;
-    max-width: 1230px;
-    height: 900px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-top: 40px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.board h3 {
-    margin-top: 0;
-    font-size: 1.5em;
-    text-align: center;
-}
-
-#postForm {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 1200px;
-}
-
-#postForm.hidden {
-    display: none;
-}
-
-#postForm input[type="text"],
-#postContentDisplay {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-}
-
-#postForm input[type="text"] {
-    height: 60px;
-}
-
-#postContentDisplay {
-    height: 580px;
-    overflow-y: auto;
-}
-
-#postForm input[type="file"] {
-    margin-top: 10px;
-}
-
-#postForm button {
-    align-self: flex-end;
-    padding: 10px 20px;
-    border: none;
-    background-color: #495057;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#posts {
-    max-height: 600px;
-    overflow-y: auto;
-    width: 100%;
-}
-
-.post {
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.post .post-number {
-    color: #007bff;
-    margin-right: 10px;
-}
-
-.post .post-title {
-    flex-grow: 1;
-    color: #495057;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.post .post-date {
-    flex-shrink: 0;
-    color: #28a745;
-    margin-left: 20px;
-}
-
-.post.active .post-content,
-.post.active .post-image {
-    display: block;
-}
-
-.post-content {
-    display: none;
-    margin-top: 10px;
-    white-space: pre-wrap;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.post-image {
-    display: none;
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.pagination button {
-    border: none;
-    background-color: transparent;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.pagination button.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.create-post-button,
-#deletePostButton,
-#editPostButton,
-#backToListButton {
-    position: absolute;
-    bottom: 20px;
-    padding: 10px 20px;
-    background-color: #495057;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#createPostButton.hidden,
-#deletePostButton.hidden,
-#editPostButton.hidden,
-#backToListButton.hidden {
-    display: none;
-}
-
-#createPostButton {
-    right: 20px;
-}
-
-#deletePostButton {
-    right: calc(20px + 1mm + 100px);
-}
-
-#editPostButton {
-    right: calc(20px + 2mm + 200px);
-}
-
-#backToListButton {
-    right: calc(20px + 3mm + 300px);
-}
-
 /* responsive styles */
 @media (max-width: 768px) {
-    .banner-grid,
-    .small-banner-grid {
+    .banner-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .banner,
-    .small-banner {
+    .banner {
         width: 100%;
         height: auto;
     }
 
-    .container,
-    .board {
+    .container {
         width: 100%;
         padding: 0 10px;
     }
@@ -465,13 +255,11 @@ main {
 }
 
 @media (max-width: 480px) {
-    .banner-grid,
-    .small-banner-grid {
+    .banner-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .container,
-    .board {
+    .container {
         width: 100%;
         padding: 0 10px;
     }

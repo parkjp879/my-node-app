@@ -14,42 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const postsPerPage = 10;
     let currentPage = 1;
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];
     let currentPostIndex = null;
-    let posts = [];
-
-    async function fetchPosts() {
-        try {
-            const response = await fetch('http://localhost:3000/posts');
-            posts = await response.json();
-            console.log('Fetched posts:', posts);
-            renderPosts();
-            renderPagination();
-        } catch (error) {
-            console.error('Error fetching posts:', error);
-        }
-    }
-
-    async function addPost(post) {
-        try {
-            const response = await fetch('http://localhost:3000/posts', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(post)
-            });
-
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-
-            const newPost = await response.json();
-            console.log('Post added successfully:', newPost);
-            fetchPosts(); 
-        } catch (error) {
-            console.error('Error adding post:', error);
-        }
-    }
 
     function setLogoutButton() {
         loginButton.innerText = '로그아웃';
@@ -148,12 +114,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 date: postDate
             };
 
-            console.log('Submitting new post:', post);
-            addPost(post);
+            posts.unshift(post);
+            localStorage.setItem('posts', JSON.stringify(posts));
             postForm.reset();
             postContentDisplay.innerHTML = '';
             postForm.classList.add('hidden');
             if (createPostButton) createPostButton.style.display = 'block';
+            renderPosts();
+            renderPagination();
         });
     }
 
@@ -161,8 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
         deletePostButton.addEventListener('click', () => {
             if (currentPostIndex !== null) {
                 posts.splice(currentPostIndex, 1);
-                fetchPosts();
+                localStorage.setItem('posts', JSON.stringify(posts));
                 currentPostIndex = null;
+                renderPosts();
+                renderPagination();
                 deletePostButton.classList.add('hidden');
                 editPostButton.classList.add('hidden');
                 backToListButton.classList.add('hidden');
@@ -189,11 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     post.date = new Date().toLocaleDateString();
 
                     posts[currentPostIndex] = post;
-                    addPost(post);
+                    localStorage.setItem('posts', JSON.stringify(posts));
                     postForm.reset();
                     postContentDisplay.innerHTML = '';
                     postForm.classList.add('hidden');
                     if (createPostButton) createPostButton.style.display = 'block';
+                    renderPosts();
+                    renderPagination();
                     postForm.onsubmit = null;
                 };
             }
@@ -202,7 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (backToListButton) {
         backToListButton.addEventListener('click', () => {
-            fetchPosts();
+            renderPosts();
+            renderPagination();
             deletePostButton.classList.add('hidden');
             editPostButton.classList.add('hidden');
             backToListButton.classList.add('hidden');
@@ -271,7 +244,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    fetchPosts();
+    renderPosts();
+    renderPagination();
 
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
