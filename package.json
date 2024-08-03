@@ -1,17 +1,12 @@
 {
   "name": "project-root",
   "version": "1.0.0",
-  "description": "My Node.js project",
-  "main": "functions/server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node functions/server.js",
     "build": "echo 'Build step not defined'"
   },
   "dependencies": {
     "express": "^4.17.1"
-  },
-  "devDependencies": {},
-  "engines": {
-    "node": ">=14.0.0"
   }
 }
