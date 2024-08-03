@@ -15,7 +15,7 @@ app.get('/posts', (req, res) => {
 
 app.post('/posts', (req, res) => {
     const post = req.body;
-    console.log('Received new post:', post);
+    console.log('Received new post:', post); // 서버에 게시글이 제대로 도착했는지 확인하기 위한 로그
     posts.unshift(post);
     res.status(201).json(post);
 });
