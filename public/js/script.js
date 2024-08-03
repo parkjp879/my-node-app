@@ -18,21 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
     let posts = [];
 
     async function fetchPosts() {
-        const response = await fetch('http://localhost:3000/posts');
-        posts = await response.json();
-        renderPosts();
-        renderPagination();
+        try {
+            const response = await fetch('http://localhost:3000/posts');
+            posts = await response.json();
+            renderPosts();
+            renderPagination();
+        } catch (error) {
+            console.error('Error fetching posts:', error);
+        }
     }
 
     async function addPost(post) {
-        await fetch('http://localhost:3000/posts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(post)
-        });
-        fetchPosts();
+        try {
+            await fetch('http://localhost:3000/posts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(post)
+            });
+            fetchPosts();
+        } catch (error) {
+            console.error('Error adding post:', error);
+        }
     }
 
     function setLogoutButton() {
