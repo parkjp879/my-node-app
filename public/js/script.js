@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch('http://localhost:3000/posts');
             posts = await response.json();
-            console.log('Fetched posts:', posts); // 게시글 목록을 가져오는 로그 추가
+            console.log('Fetched posts:', posts);
             renderPosts();
             renderPagination();
         } catch (error) {
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const newPost = await response.json();
             console.log('Post added successfully:', newPost);
-            fetchPosts(); // 게시글 추가 후 목록을 다시 가져옴
+            fetchPosts(); 
         } catch (error) {
             console.error('Error adding post:', error);
         }
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 date: postDate
             };
 
-            console.log('Submitting new post:', post); // 작성된 게시글 확인을 위한 로그 추가
+            console.log('Submitting new post:', post);
             addPost(post);
             postForm.reset();
             postContentDisplay.innerHTML = '';
